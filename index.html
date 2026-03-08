@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RZYNW1XEZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3RZYNW1XEZ');
+    </script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
     <title>Experiencia RA Belleza y Felicidad Fiorito - MALBA</title>
@@ -9,7 +17,6 @@
     
     <style>
         body { margin: 0; overflow: hidden; font-family: 'Helvetica', sans-serif; }
-        /* Pantalla de carga y permiso de audio */
         #overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.9); z-index: 1000;
@@ -33,7 +40,7 @@
     </div>
 
     <a-scene 
-        mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1; filterMinCF:0.0001; filterBeta: 0.01" 
+        mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1; filterMinCF:0.0001; filterBeta: 0.01; autoStart: false;" 
         color-space="sRGB" 
         renderer="colorManagement: true, physicallyCorrectLights" 
         vr-mode-ui="enabled: false" 
@@ -56,104 +63,56 @@
             <video id="vid13" data-src="https://tuservidor.com/video14.mp4" loop="true" crossorigin="anonymous" playsinline></video>
         </a-assets>
 
-        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
 
-        <a-entity mindar-image-target="targetIndex: 0">
-            <a-video src="#vid0" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 0"><a-video src="#vid0" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 1"><a-video src="#vid1" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 2"><a-video src="#vid2" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 3"><a-video src="#vid3" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 4"><a-video src="#vid4" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 5"><a-video src="#vid5" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 6"><a-video src="#vid6" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 7"><a-video src="#vid7" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 8"><a-video src="#vid8" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 9"><a-video src="#vid9" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 10"><a-video src="#vid10" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 11"><a-video src="#vid11" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 12"><a-video src="#vid12" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
+        <a-entity mindar-image-target="targetIndex: 13"><a-video src="#vid13" position="0 0 0.1" width="1" height="1.5" smart-video-player></a-video></a-entity>
 
-        <a-entity mindar-image-target="targetIndex: 1">
-            <a-video src="#vid1" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
+    </a-scene>
 
-        <a-entity mindar-image-target="targetIndex: 2">
-            <a-video src="#vid2" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-        
-        <a-entity mindar-image-target="targetIndex: 3">
-            <a-video src="#vid3" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 4">
-            <a-video src="#vid4" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 5">
-            <a-video src="#vid5" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 6">
-            <a-video src="#vid6" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 7">
-            <a-video src="#vid7" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 8">
-            <a-video src="#vid8" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 9">
-            <a-video src="#vid9" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 10">
-            <a-video src="#vid10" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 11">
-            <a-video src="#vid11" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-
-        <a-entity mindar-image-target="targetIndex: 12">
-            <a-video src="#vid12" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-     
-        <a-entity mindar-image-target="targetIndex: 13">
-            <a-video src="#vid13" position="0 -0.5 0.1" rotation="0 0 5" width="3" height="5.5" smart-video-player></a-video>
-        </a-entity>
-       </a-scene>
     <script>
-        // Componente para manejar carga y reproducción inteligente
         AFRAME.registerComponent('smart-video-player', {
             init: function () {
                 const video = document.querySelector(this.el.getAttribute('src'));
-                
                 this.el.parentEl.addEventListener('targetFound', () => {
-                    // Si no tiene fuente, la cargamos en el momento
                     if (!video.src || video.src === "") {
                         video.src = video.getAttribute('data-src');
                         video.load();
                     }
                     video.play();
                 });
-
                 this.el.parentEl.addEventListener('targetLost', () => {
                     video.pause();
                 });
             }
         });
 
-        // Botón de inicio para cumplir políticas de Safari/Chrome
         document.getElementById('startButton').addEventListener('click', () => {
-            document.getElementById('overlay').style.display = 'none';
+            const sceneEl = document.querySelector('a-scene');
+            const overlay = document.getElementById('overlay');
+            
+            // 1. Ocultar el overlay
+            overlay.style.display = 'none';
 
+            // 2. CAMBIO CRÍTICO: Iniciar el sistema de MindAR manualmente tras el clic
+            sceneEl.systems['mindar-image-system'].start();
 
-
-Sume estooo
-
-
- // "Despierta" todos los videos para saltar la restricción de iPhone/Android
+            // 3. Desbloquear audio/video para móviles
             const videos = document.querySelectorAll('video');
             videos.forEach(v => {
-                // Se le da un pequeño play/pause rápido para que el navegador 
-                // entienda que el usuario dio permiso de reproducir medios.
-                v.play().then(() => {
-                    v.pause();
-                }).catch(err => {
-                    console.log("Esperando interacción para:", v.id);
-                });
+                v.play().then(() => { v.pause(); }).catch(e => console.log(e));
             });
         });
     </script>
