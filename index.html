@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RZYNW1XEZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3RZYNW1XEZ');
-</script>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
     <title>Experiencia RA Belleza y Felicidad Fiorito - MALBA</title>
@@ -43,7 +33,7 @@
     </div>
 
     <a-scene 
-        mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1; filterMinCF:0.0001; filterBeta: 0.01; autoStart: false;" 
+        mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1; filterMinCF:0.0001; filterBeta: 0.01" 
         color-space="sRGB" 
         renderer="colorManagement: true, physicallyCorrectLights" 
         vr-mode-ui="enabled: false" 
@@ -144,29 +134,17 @@
                 });
             }
         });
-        
-        document.getElementById('startButton').addEventListener('click', () => {
-            const sceneEl = document.querySelector('a-scene');
-            const overlay = document.getElementById('overlay');
-            
-            // 1. Ocultar el overlay
-            overlay.style.display = 'none';
 
-            // 2. CAMBIO CRÍTICO: Iniciar el sistema de MindAR manualmente tras el clic
-            sceneEl.systems['mindar-image-system'].start();
-
-            // 3. Desbloquear audio/video para móviles
-            const videos = document.querySelectorAll('video');
-            videos.forEach(v => {
-                v.play().then(() => { v.pause(); }).catch(e => console.log(e));
-            });
-        });
-    </script>
         // Botón de inicio para cumplir políticas de Safari/Chrome
         document.getElementById('startButton').addEventListener('click', () => {
             document.getElementById('overlay').style.display = 'none';
-       
-            // "Despierta" todos los videos para saltar la restricción de iPhone/Android
+
+
+
+Sume estooo
+
+
+ // "Despierta" todos los videos para saltar la restricción de iPhone/Android
             const videos = document.querySelectorAll('video');
             videos.forEach(v => {
                 // Se le da un pequeño play/pause rápido para que el navegador 
