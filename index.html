@@ -35,7 +35,7 @@
 <body>
 
     <div id="overlay">
-        <h2>Belleza y Felicidad Fiorito - MALBA 5 </h2>
+        <h2>Belleza y Felicidad Fiorito - MALBA 6 </h2>
         <p>Apunta a los marcadores para ver los videos</p>
         <button id="startButton">COMENZAR EXPERIENCIA</button>
         <p class="loading-text">Se recomienda el uso de auriculares</p>
@@ -123,15 +123,7 @@
         document.getElementById('startButton').addEventListener('click', () => {
             document.getElementById('overlay').style.display = 'none';
         
-            // "Despierta" todos los videos para saltar la restricción de iPhone/Android
-            const videos = document.querySelectorAll('video');
-            videos.forEach(v => {
-                // Se le da un pequeño play/pause rápido para que el navegador 
-                // entienda que el usuario dio permiso de reproducir medios.
-                v.play().then(() => {
-                    v.pause();
-                }).catch(err => {
-                    console.log("Esperando interacción para:", v.id);
+            
                 });
             });
         });
