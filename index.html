@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RZYNW1XEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3RZYNW1XEZ');
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
     <title>Experiencia RA - MALBA</title>
@@ -26,13 +35,14 @@
 <body>
 
     <div id="overlay">
-        <h2>Belleza y Felicidad Fiorito - MALBA 4 </h2>
+        <h2>Belleza y Felicidad Fiorito - MALBA 5 </h2>
         <p>Apunta a los marcadores para ver los videos</p>
         <button id="startButton">COMENZAR EXPERIENCIA</button>
         <p class="loading-text">Se recomienda el uso de auriculares</p>
     </div>
 
     <a-scene 
+        renderer="antialias: false; precision: mediump;"
         mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1; filterMinCF:0.0001; filterBeta: 0.001" 
         color-space="sRGB" 
         renderer="colorManagement: true, physicallyCorrectLights" 
@@ -112,6 +122,18 @@
         // Botón de inicio para cumplir políticas de Safari/Chrome
         document.getElementById('startButton').addEventListener('click', () => {
             document.getElementById('overlay').style.display = 'none';
+        
+            // "Despierta" todos los videos para saltar la restricción de iPhone/Android
+            const videos = document.querySelectorAll('video');
+            videos.forEach(v => {
+                // Se le da un pequeño play/pause rápido para que el navegador 
+                // entienda que el usuario dio permiso de reproducir medios.
+                v.play().then(() => {
+                    v.pause();
+                }).catch(err => {
+                    console.log("Esperando interacción para:", v.id);
+                });
+            });
         });
     </script>
 </body>
