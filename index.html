@@ -24,7 +24,6 @@ body { margin:0; overflow:hidden; background:black; }
     position:fixed;
     top:0; left:0;
     width:100%; height:100%;
-    font-family: 'Helvetica', sans-serif; 
     background:black;
     display:flex;
     flex-direction:column;
@@ -47,13 +46,13 @@ button {
 <body>
 
 <div id="overlay">
-    <h2>BELLEZA Y FELICIDAD FIORITO. MALBA 2</h2>
+    <h2>BELLEZA Y FELICIDAD FIORITO. MALBA3</h2>
     <p>Apunta la cámara a los marcadores </p>
     <button id="startButton">INICIAR</button>
 </div>
 
-<a-scene 
-mindar-image="imageTargetSrc: ./targets.mind; maxTrack:1; filterBeta: 0.05; filterMinCF: 0.01;"
+<a-scene
+mindar-image="imageTargetSrc: ./targets.mind; maxTrack:1; filterBeta: 0.01;"
 color-space="sRGB"
 renderer="colorManagement:true"
 vr-mode-ui="enabled:false"
