@@ -1,44 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RZYNW1XEZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3RZYNW1XEZ');
-</script>
-    
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="UTF-8">
-<title>Experiencia RA PRO</title>
+<title>MALBA RA PRO</title>
 
 <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
 <style>
-body { margin:0; overflow:hidden; background:black; font-family: 'Helvetica' }
+body { margin:0; overflow:hidden; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 #overlay {
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:black;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    z-index:9999;
-    text-align:center;
+  position:fixed;
+  width:100%; height:100%;
+  background:black;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
 }
-
 button {
-    padding:16px 32px;
-    font-size:18px;
-    border-radius:30px;
-    border:none;
+  padding:15px 30px;
+  font-size:18px;
 }
 </style>
 </head>
@@ -46,14 +32,12 @@ button {
 <body>
 
 <div id="overlay">
-    <h2>BELLEZA Y FELICIDAD FIORITO. MALBA</h2>
-    <p>Apunta la cámara a los marcadores </p>
-    <button id="startButton">INICIAR</button>
+  <h2>Belleza y Felicidad Fiorito. MALBA</h2>
+  <button id="startButton">INICIAR</button>
 </div>
 
 <a-scene
-mindar-image="imageTargetSrc: ./targets.mind; maxTrack:1; filterBeta: 0.05;"
-color-space="sRGB"
+mindar-image="imageTargetSrc: ./targets.mind; maxTrack:1; filterBeta:0.08; filterMinCF:0.02;"
 renderer="colorManagement:true"
 vr-mode-ui="enabled:false"
 device-orientation-permission-ui="enabled:false"
@@ -61,7 +45,6 @@ device-orientation-permission-ui="enabled:false"
 
 <a-assets>
 
-<!-- SOLO metadata al inicio -->
 <video id="vid0" preload="metadata" muted playsinline crossorigin="anonymous"></video>
 <video id="vid1" preload="metadata" muted playsinline crossorigin="anonymous"></video>
 <video id="vid2" preload="metadata" muted playsinline crossorigin="anonymous"></video>
@@ -73,25 +56,124 @@ device-orientation-permission-ui="enabled:false"
 <video id="vid8" preload="metadata" muted playsinline crossorigin="anonymous"></video>
 <video id="vid9" preload="metadata" muted playsinline crossorigin="anonymous"></video>
 <video id="vid10" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid11" preload="metadata" muted playsinline crossorigin="anonymous"></video>
 
 </a-assets>
 
 <a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
 
 <!-- TARGETS -->
-<a-entity mindar-image-target="targetIndex:0"><a-video src="#vid0" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:1"><a-video src="#vid1" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:2"><a-video src="#vid2" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:3"><a-video src="#vid3" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:4"><a-video src="#vid4" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:5"><a-video src="#vid5" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:6"><a-video src="#vid6" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:7"><a-video src="#vid7" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:8"><a-video src="#vid8" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:9"><a-video src="#vid9" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:10"><a-video src="#vid10" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:11"><a-video src="#vid11" width="3" height="5"></a-video></a-entity>
+
+<!-- DUPLICAR BLOQUE PARA CADA VIDEO -->
+
+<a-entity mindar-image-target="targetIndex:0">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid0" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:1">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid1" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:2">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid2" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:3">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid3" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:4">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid4" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:5">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid5" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:6">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid6" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:7">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid7" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:8">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid8" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:9">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid9" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
+
+<a-entity mindar-image-target="targetIndex:10">
+  <a-entity class="tracker">
+    <a-entity class="smooth" hybrid-stabilizer>
+      <a-entity class="lock">
+        <a-video src="#vid10" width="3" height="5" material="shader: flat"></a-video>
+      </a-entity>
+    </a-entity>
+  </a-entity>
+</a-entity>
 
 </a-scene>
 
@@ -108,66 +190,87 @@ const sources = [
 "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908745/8_VEREDAS_FIORITO_HELADOS_480_fdzlhs.mp4",
 "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908748/9_VEREDAS_FIORITO_NINIES_CAMINANDO_480_rlx0my.mp4",
 "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908750/10_VEREDAS_FIORITO_NINIES_480_dkxfpd.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1774763051/11_B_VEREDAS_FIORITO_POLICIA_OK_OK_irztyl.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1774759116/12_B_VEREDAS_FIORITO_RIACHUELO_a0tuex.mp4"
+"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908751/11_VEREDAS_FIORITO_POLICIA_480_m3e72k.mp4"
 ];
 
 let currentVideo = null;
+
+const isAndroid = /android/i.test(navigator.userAgent);
+const SMOOTH = isAndroid ? 0.08 : 0.15;
+const LOCK = isAndroid ? 15 : 8;
+
+AFRAME.registerComponent('hybrid-stabilizer', {
+  init: function () {
+    this.target = this.el.parentEl.object3D;
+    this.pos = new THREE.Vector3();
+    this.rot = new THREE.Quaternion();
+    this.locked = false;
+    this.counter = 0;
+  },
+  tick: function () {
+
+    const t = this.target;
+    const dist = this.pos.distanceTo(t.position);
+
+    if (dist < 0.002) this.counter++;
+    else { this.counter = 0; this.locked = false; }
+
+    if (this.counter > LOCK) this.locked = true;
+
+    if (!this.locked) {
+      this.pos.lerp(t.position, SMOOTH);
+      this.rot.slerp(t.quaternion, SMOOTH);
+      this.el.object3D.position.copy(this.pos);
+      this.el.object3D.quaternion.copy(this.rot);
+    }
+  }
+});
 
 const sceneEl = document.querySelector('a-scene');
 
 document.getElementById('startButton').addEventListener('click', async () => {
 
-    document.getElementById('overlay').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
 
-    // precarga mínima (hack iOS)
-    document.querySelectorAll('video').forEach((v,i)=>{
-        v.src = sources[i];
-        v.load();
-    });
+  document.querySelectorAll('video').forEach((v,i)=>{
+    v.src = sources[i];
+    v.load();
+  });
 
-    await sceneEl.systems["mindar-image-system"].start();
+  await sceneEl.systems["mindar-image-system"].start();
 
 });
 
-// lógica PRO
 document.querySelectorAll('[mindar-image-target]').forEach((target, index) => {
 
-    target.addEventListener('targetFound', async () => {
+  target.addEventListener('targetFound', async () => {
 
-        const vid = document.querySelector(`#vid${index}`);
+    const vid = document.querySelector(`#vid${index}`);
 
-        // apagar anterior
-        if(currentVideo && currentVideo !== vid){
-            currentVideo.pause();
-            currentVideo.currentTime = 0;
-            currentVideo.muted = true;
-        }
+    if(currentVideo && currentVideo !== vid){
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+      currentVideo.muted = true;
+    }
 
-        // activar actual
-        vid.muted = false;
-        await vid.play();
+    vid.muted = false;
 
-        currentVideo = vid;
-    });
+    try { await vid.play(); } catch(e){}
 
-    target.addEventListener('targetLost', () => {
+    currentVideo = vid;
+  });
 
-        const vid = document.querySelector(`#vid${index}`);
+  target.addEventListener('targetLost', () => {
 
-        vid.pause();
-        vid.currentTime = 0;
-        vid.muted = true;
+    const vid = document.querySelector(`#vid${index}`);
 
-        currentVideo = null;
-    });
+    vid.pause();
+    vid.currentTime = 0;
+    vid.muted = true;
 
-});
+    currentVideo = null;
+  });
 
-// debug real
-sceneEl.addEventListener('arError', (e)=>{
-    alert("Error AR: revisar cámara / HTTPS");
-    console.error(e);
 });
 
 </script>
