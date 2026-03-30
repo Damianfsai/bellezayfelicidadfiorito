@@ -1,175 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RZYNW1XEZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3RZYNW1XEZ');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RZYNW1XEZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3RZYNW1XEZ');
+    </script>
     
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta charset="UTF-8">
-<title>Experiencia RA PRO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>Experiencia RA PRO</title>
 
-<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
-<style>
-body { margin:0; overflow:hidden; background:black; }
-
-#overlay {
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:black;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    z-index:9999;
-    text-align:center;
-}
-
-button {
-    padding:16px 32px;
-    font-size:18px;
-    border-radius:30px;
-    border:none;
-}
-</style>
+    <style>
+        body { margin:0; overflow:hidden; background:black; }
+        #overlay {
+            position:fixed;
+            top:0; left:0;
+            width:100%; height:100%;
+            background:rgba(0,0,0,0.9);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            color:white;
+            z-index:9999;
+            text-align:center;
+            font-family: sans-serif;
+        }
+        button {
+            padding:16px 32px;
+            font-size:18px;
+            border-radius:30px;
+            border:none;
+            background: white;
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
 <div id="overlay">
-    <h2>BELLEZA Y FELICIDAD FIORITO. MALBA</h2>
-    <p>Apunta la cámara hacia los marcadores </p>
+    <h2>BELLEZA Y FELICIDAD FIORITO. MALBA2</h2>
+    <p>Apunta la cámara hacia los marcadores</p>
     <button id="startButton">INICIAR</button>
 </div>
 
 <a-scene
-     mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1; filterMinCF:0.02; filterBeta: 0.25" 
-     color-space="sRGB" 
-     renderer="colorManagement: true, physicallyCorrectLights" 
-     vr-mode-ui="enabled: false" 
-     device-orientation-permission-ui="enabled: false">
->
+    mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1; filterMinCF:0.001; filterBeta: 0.1" 
+    color-space="sRGB" 
+    renderer="colorManagement: true, antialias: true" 
+    vr-mode-ui="enabled: false" 
+    device-orientation-permission-ui="enabled: false">
 
-<a-assets>
+    <a-assets>
+        <video id="vid0" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid1" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid2" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid3" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid4" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid5" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid6" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid7" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid8" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid9" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid10" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+        <video id="vid11" preload="auto" loop="true" muted playsinline crossorigin="anonymous"></video>
+    </a-assets>
 
-<!-- SOLO metadata al inicio -->
-<video id="vid0" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid1" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid2" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid3" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid4" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid5" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid6" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid7" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid8" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid9" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid10" preload="metadata" muted playsinline crossorigin="anonymous"></video>
-<video id="vid11" preload="metadata" muted playsinline crossorigin="anonymous"></video>
+    <a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
 
-</a-assets>
-
-<a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
-
-<!-- TARGETS -->
-<a-entity mindar-image-target="targetIndex:0"><a-video src="#vid0" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:1"><a-video src="#vid1" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:2"><a-video src="#vid2" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:3"><a-video src="#vid3" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:4"><a-video src="#vid4" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:5"><a-video src="#vid5" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:6"><a-video src="#vid6" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:7"><a-video src="#vid7" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:8"><a-video src="#vid8" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:9"><a-video src="#vid9" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:10"><a-video src="#vid10" width="3" height="5"></a-video></a-entity>
-<a-entity mindar-image-target="targetIndex:11"><a-video src="#vid11" width="3" height="5"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:0"><a-video src="#vid0" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:1"><a-video src="#vid1" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:2"><a-video src="#vid2" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:3"><a-video src="#vid3" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:4"><a-video src="#vid4" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:5"><a-video src="#vid5" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:6"><a-video src="#vid6" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:7"><a-video src="#vid7" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:8"><a-video src="#vid8" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:9"><a-video src="#vid9" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:10"><a-video src="#vid10" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
+    <a-entity mindar-image-target="targetIndex:11"><a-video src="#vid11" width="1" height="1.6" position="0 0 0.01" material="shader: flat; transparent: true"></a-video></a-entity>
 
 </a-scene>
 
 <script>
-
 const sources = [
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772938685/1_COMEDOR_GOURMET_REPARTO_TUPPERS_480_hxse1v.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908740/2_TALLER_NINIES_480_oidhcn.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908741/3_SERIGRAFIA480_bs3bnn.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908740/4_TALLER_CERAMICA_ADULTO_480_mze0hn.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1773112691/5_LA_JOYA_tjnvge.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908744/6_TALLER_COSTURA_DELANTALES_480_wnhiyo.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908747/7_VEREDAS_FIORITO_CHICAS_BAILANDO_i1muut.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908745/8_VEREDAS_FIORITO_HELADOS_480_fdzlhs.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908748/9_VEREDAS_FIORITO_NINIES_CAMINANDO_480_rlx0my.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908750/10_VEREDAS_FIORITO_NINIES_480_dkxfpd.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1774763051/11_B_VEREDAS_FIORITO_POLICIA_OK_OK_irztyl.mp4",
-"https://res.cloudinary.com/dnsy0ccg8/video/upload/v1774759116/12_B_VEREDAS_FIORITO_RIACHUELO_a0tuex.mp4"
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772938685/1_COMEDOR_GOURMET_REPARTO_TUPPERS_480_hxse1v.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908740/2_TALLER_NINIES_480_oidhcn.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908741/3_SERIGRAFIA480_bs3bnn.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908740/4_TALLER_CERAMICA_ADULTO_480_mze0hn.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1773112691/5_LA_JOYA_tjnvge.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908744/6_TALLER_COSTURA_DELANTALES_480_wnhiyo.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908747/7_VEREDAS_FIORITO_CHICAS_BAILANDO_i1muut.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908745/8_VEREDAS_FIORITO_HELADOS_480_fdzlhs.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908748/9_VEREDAS_FIORITO_NINIES_CAMINANDO_480_rlx0my.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1772908750/10_VEREDAS_FIORITO_NINIES_480_dkxfpd.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1774763051/11_B_VEREDAS_FIORITO_POLICIA_OK_OK_irztyl.mp4",
+    "https://res.cloudinary.com/dnsy0ccg8/video/upload/v1774759116/12_B_VEREDAS_FIORITO_RIACHUELO_a0tuex.mp4"
 ];
 
 let currentVideo = null;
-
 const sceneEl = document.querySelector('a-scene');
 
-document.getElementById('startButton').addEventListener('click', async () => {
-
+document.getElementById('startButton').addEventListener('click', () => {
     document.getElementById('overlay').style.display = 'none';
 
-    // precarga mínima (hack iOS)
-    document.querySelectorAll('video').forEach((v,i)=>{
+    // Inicialización de videos para iOS (debe ocurrir en un evento de click)
+    document.querySelectorAll('video').forEach((v, i) => {
         v.src = sources[i];
         v.load();
+        // Forzamos un pequeño play/pause para desbloquear el elemento
+        v.play().then(() => {
+            v.pause();
+            v.currentTime = 0;
+        }).catch(e => console.log("Video prep ready"));
     });
 
-    await sceneEl.systems["mindar-image-system"].start();
-
+    sceneEl.systems["mindar-image-system"].start();
 });
 
-// lógica PRO
 document.querySelectorAll('[mindar-image-target]').forEach((target, index) => {
-
-    target.addEventListener('targetFound', async () => {
-
+    target.addEventListener('targetFound', () => {
         const vid = document.querySelector(`#vid${index}`);
-
-        // apagar anterior
+        
         if(currentVideo && currentVideo !== vid){
             currentVideo.pause();
-            currentVideo.currentTime = 0;
             currentVideo.muted = true;
         }
 
-        // activar actual
         vid.muted = false;
-        await vid.play();
-
+        vid.play();
         currentVideo = vid;
     });
 
     target.addEventListener('targetLost', () => {
-
         const vid = document.querySelector(`#vid${index}`);
-
         vid.pause();
-        vid.currentTime = 0;
         vid.muted = true;
-
-        currentVideo = null;
+        if(currentVideo === vid) currentVideo = null;
     });
-
 });
 
-// debug real
-sceneEl.addEventListener('arError', (e)=>{
-    alert("Error AR: revisar cámara / HTTPS");
-    console.error(e);
+sceneEl.addEventListener('arError', (e) => {
+    alert("Error AR: revisa los permisos de cámara y que el sitio use HTTPS");
 });
-
 </script>
 
 </body>
